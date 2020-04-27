@@ -5,6 +5,7 @@ import (
 	"os"
 	"runtime"
 	"strings"
+	"time"
 )
 
 const envLevel = "LOG_LEVEL"
@@ -64,7 +65,7 @@ func SetLevel(lv string) {
 func Debug(msg interface{}) {
 	_, file, line, _ := runtime.Caller(1)
 	if l.Level == debugLevel {
-		fmt.Printf(debugColor("[%s] [%s line %d] %s \n"), debugLevel, file[strings.LastIndex(file, "/")+1:], line, msg)
+		fmt.Printf(debugColor("[%s] [%s] [%s line %d] %s \n"), time.Now().Format("2006-01-02 15:04:05"), debugLevel, file[strings.LastIndex(file, "/")+1:], line, msg)
 	}
 }
 
@@ -72,12 +73,12 @@ func Debug(msg interface{}) {
 func Info(msg interface{}) {
 	_, file, line, _ := runtime.Caller(1)
 	if l.Level == debugLevel || l.Level == infoLevel {
-		fmt.Printf(infoColor("[%s] [%s line %d] %s \n"), infoLevel, file[strings.LastIndex(file, "/")+1:], line, msg)
+		fmt.Printf(infoColor("[%s] [%s] [%s line %d] %s \n"), time.Now().Format("2006-01-02 15:04:05"), infoLevel, file[strings.LastIndex(file, "/")+1:], line, msg)
 	}
 }
 
 // Error statements always print regardless of log level.
 func Error(msg interface{}) {
 	_, file, line, _ := runtime.Caller(1)
-	fmt.Printf(errColor("[%s] [%s line %d] %s \n"), errorLevel, file[strings.LastIndex(file, "/")+1:], line, msg)
+	fmt.Printf(errColor("[%s] [%s] [%s line %d] %s \n"), time.Now().Format("2006-01-02 15:04:05"), errorLevel, file[strings.LastIndex(file, "/")+1:], line, msg)
 }
