@@ -42,3 +42,4 @@ or via environment variable:
 
 You can suppress the log layers by setting the appropriate log level e.g. setting it to `ERROR` will only print error statements, setting it to `INFO` will print error and info statements. `DEBUG` prints everything. 
 
+![log levels](loglevels.png?raw=true "Log Levels")
