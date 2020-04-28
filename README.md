@@ -26,7 +26,7 @@ func main() {
 }
 ```
 
-![log output](slog/log.png?raw=true "Log Output screenshot")
+![log output](theiny/slog/blob/master/slog/log.png?raw=true "Log Output screenshot")
 
 # Set Log Level
 
