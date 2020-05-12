@@ -30,16 +30,16 @@ func main() {
 
 # Set Log Level
 
+By default, the log level is set to `DEBUG` when initialized. If you want to set it to a different level:
+
 In code:
 
-`log.SetLevel("DEBUG")`
+`log.SetLevel("ERROR")`
 
 or via environment variable:
 
-`LOG_LEVEL: "DEBUG"`
+`LOG_LEVEL: "ERROR"`
 
 # Log Levels
 
 You can suppress the log layers by setting the appropriate log level e.g. setting it to `ERROR` will only print error statements, setting it to `INFO` will print error and info statements. `DEBUG` prints everything. 
-
-![log levels](loglevels.png?raw=true "Log Levels")
